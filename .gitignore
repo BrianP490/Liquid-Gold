@@ -6,3 +6,4 @@ HuggingFace/
 *.jpg
 *.png
 models/
+.git/
