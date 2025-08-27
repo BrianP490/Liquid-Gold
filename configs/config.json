@@ -4,7 +4,9 @@
     "root_data_dir": "../Data",
     "data_file_path": "OIL_DATASET.csv",
     "data_splits_dir": "DataSplits",
-    "scaler_dir": "Scalers"
+    "scaler_dir": "Scalers",
+    "target_column": "Close",
+    "extra_dropped_columns": ["Date"]
   }
   ,
   "parser_defaults": {
