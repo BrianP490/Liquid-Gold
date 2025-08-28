@@ -68,3 +68,26 @@ TRAINING TOOK: 0 Hours, 0 Minutes, and 1.704 Seconds
 2025-08-27 21:22:33 - main - INFO - FINISHED MAIN SCRIPT
 OVERALL DURATION: 0 Hours, 0 Minutes, and 1.780 Seconds
 2025-08-27 21:22:33 - main - INFO - TERMINATING PROGRAM
+2025-08-28 16:32:05 - main - INFO - Namespace(epochs=1, learning_rate=0.003, max_grad_norm=3.0, dataloader_batch_size=64, dataloader_pin_memory=True, dataloader_num_workers=0, log_iterations=256, eval_iterations=64, use_cuda=False, device='cpu', save_model=False, model_output_path='./models/liquid_gold_model.pt')
+2025-08-28 16:32:05 - main - INFO - Calling main script...
+2025-08-28 16:32:05 - main - INFO - STARTING MAIN FUNCTION
+2025-08-28 16:32:05 - main - INFO - RUNNING THE DATA PIPELINE
+2025-08-28 16:32:05 - main - INFO - CSV file detected, reading from '..\Data'
+2025-08-28 16:32:05 - main - INFO - Train, Test, and Validation csv datasets detected in '..\Data\DataSplits.' Skipping generation and loading scaler(s)
+2025-08-28 16:32:05 - main - INFO - Initializing Datasets
+2025-08-28 16:32:05 - main - INFO - Creating DataLoaders with batch_size (64), num_workers (0), pin_memory (True). Training dataset drop_last: (True)
+2025-08-28 16:32:05 - main - INFO - Training DataLoader has (89) batches, Test DataLoader has (4) batches, Validation DataLoader has (4) batches
+2025-08-28 16:32:05 - main - INFO - BEGINNING TRAINING SCRIPT
+2025-08-28 16:32:16 - main - INFO - =====================  [EPOCH (0) LOGGING]  =====================
+2025-08-28 16:32:16 - main - INFO - | AVERAGES of THIS EPOCH:
+2025-08-28 16:32:16 - main - INFO - | ACCUMULATED LOSS: 0.9425852
+2025-08-28 16:32:16 - main - INFO - ===========================================================
+2025-08-28 16:32:16 - main - INFO - FINISHED MODEL TRAINING. 
+TRAINING TOOK: 0 Hours, 0 Minutes, and 10.947 Seconds
+2025-08-28 16:32:16 - main - INFO - TESTING THE TRAINED POLICY:
+2025-08-28 16:32:16 - main - INFO - ===============================================
+2025-08-28 16:32:16 - main - INFO - Entire Dataset Average Loss: 0.1880 
+2025-08-28 16:32:16 - main - INFO - =====================================================
+2025-08-28 16:32:16 - main - INFO - FINISHED MAIN SCRIPT
+OVERALL DURATION: 0 Hours, 0 Minutes, and 11.218 Seconds
+2025-08-28 16:32:16 - main - INFO - TERMINATING PROGRAM
