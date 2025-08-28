@@ -37,11 +37,10 @@
   }
   ,
   "simulated_args": {
-    "--epochs": "512",
+    "--epochs": "1",
     "--learning_rate": "0.003",
     "--log_iterations": "256",
     "--eval_iterations": "64",
-    "--save_model": "",
-    "--model_save_path": "./models/liquid_gold_model.pt"
+    "--model_output_path": "./models/liquid_gold_model.pt"
   }
 }

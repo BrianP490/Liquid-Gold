@@ -61,7 +61,6 @@ US_Net_Imports = st.number_input("What was the U.S. crude oil NET imports of the
 
 # Prepare input tensor
 raw_inputs = (open, high, low, cali, texas, us_crude_first, US_Imports_from_Canada, US_Imports_from_Colombia, US_Imports_from_United_Kingdom, US_Imports_from_Mexico, US_Imports_from_OPEC_Countries, US_Imports_from_Non_OPEC_Countries, US_Imports, US_Exports_to_Canada, US_Exports, US_Net_Imports_from_Canada, US_Net_Imports_from_Colombia, US_Net_Imports_from_Mexico, US_Net_Imports_from_United_Kingdom, US_Net_Imports_from_OPEC_Countries, US_Net_Imports_from_Non_OPEC_Countries, US_Net_Imports)
-# inputs = torch.tensor(raw_inputs, dtype=torch.float32).unsqueeze(0)
 
 inputs = features_scaler.transform([raw_inputs])  # Scale the inputs using the pre-fitted scaler
 
