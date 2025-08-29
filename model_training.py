@@ -14,6 +14,9 @@ from logging import Logger # For type hinting
 from torch.nn import Module # For type hinting
 from typing import Dict, Any, List, Optional # For type hinting
 
+# Global Variables
+CONFIG_PATH = './configs/config.json'
+
 class OilDataset(Dataset):
     """Dataset class For the OIL_DATASET"""
     def __init__(self, csv_file: str="../Data/DataSplits/test.csv", label_column: str="Label"):
@@ -489,18 +492,17 @@ def json_to_arg_list(arg_dict) -> List[str]:
     return args
 
 
-# Call this function, during script execution
+# Call this function, during script execution; Main script entry point
 if __name__ == '__main__':
     # --- Begin Timing Main Script Execution Time ---
     main_start_time=time.time()
 
-    config_path = './configs/config.json'
     # Load Config file
     try:
-        with open(file=config_path, mode='r') as f:
+        with open(file=CONFIG_PATH, mode='r') as f:
             json_args = json.load(f)
     except FileNotFoundError:
-        print(f"Config file not found. Please ensure '{config_path}' exists.", flush=True)
+        print(f"Config file not found. Please ensure '{CONFIG_PATH}' exists. Modify 'CONFIG_PATH' in Global Variables section if needed.", flush=True)
         exit(1)
     except Exception as e:
         print(f"Unexpected error loading config file: {e}. Exiting.")
@@ -620,5 +622,5 @@ if __name__ == '__main__':
         else:
             logger.error("MAIN SCIPT ERROR")
             # logger.error("MAIN SCIPT ERROR", exc_info=True, stack_info=True) # Use this to get more info about where the error occurred
-            
+
     exit(ret) # Crashes the Kernel in notebook environments; Uncomment when running as a script
