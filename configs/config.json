@@ -1,7 +1,7 @@
 {
   "data": {
     "dataset_url": "hf://datasets/MaxPrestige/CRUDE_OIL_PRICES/Data/OIL_DATASET.csv",
-    "root_data_dir": "../Data",
+    "root_data_dir": "./Data",
     "data_file_path": "OIL_DATASET.csv",
     "data_splits_dir": "DataSplits",
     "scaler_dir": "Scalers",
@@ -31,9 +31,12 @@
     "dropout_rate": 0.1
   },
   "logging": {
-    "log_file": "script.log",
+    "log_to_file": true,
+    "log_file": "logs/app.log",
     "logger_name": "main",
-    "log_level": "INFO"
+    "log_level": "INFO",
+    "log_mode": "w",
+    "log_to_console": true
   }
   ,
   "simulated_args": {
@@ -41,6 +44,7 @@
     "--learning_rate": "0.003",
     "--log_iterations": "256",
     "--eval_iterations": "64",
+    "--save_model": "",
     "--model_output_path": "./models/liquid_gold_model.pt"
   }
 }
