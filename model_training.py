@@ -389,6 +389,9 @@ def main(parser_args, global_config) -> int:
     else:
         if parser_args.use_cuda:   # Check if the user wanted to use CUDA if available.
             DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        else: 
+            logger.info("Defaulted to using CPU for training.")
+            DEVICE = 'cpu'
 
     SAVE_LOCATION = global_config["parser_defaults"]["model_output_path"]   # Get the model save destination path 
 
@@ -553,40 +556,40 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train and evaluate a Regression Agent.")
 
     parser.add_argument('--epochs', type=int, default=json_args["parser_defaults"]["epochs"],
-        help='(int, default=8) Number of training epochs to run.')
+        help=f'(int, default={json_args["parser_defaults"]["epochs"]}) Number of training epochs to run.')
 
     parser.add_argument('--learning_rate', type=float, default=json_args["parser_defaults"]["learning_rate"],
-        help='(float, default=0.0003) Learning rate used by the optimizer.')
+        help=f'(float, default={json_args["parser_defaults"]["learning_rate"]}) Learning rate used by the optimizer.')
     
     parser.add_argument('--max_grad_norm', type=float, default=json_args["parser_defaults"]["max_grad_norm"],
-        help='(float, default=3.0) The Maximum L2 Norm of the gradients for Gradient Clipping.')
+        help=f'(float, default={json_args["parser_defaults"]["max_grad_norm"]}) The Maximum L2 Norm of the gradients for Gradient Clipping.')
 
     parser.add_argument('--dataloader_batch_size', type=int, default=json_args["parser_defaults"]["dataloader_batch_size"],
-        help='(int, default=64) Batch size used by the dataloaders for training, validation, and testing.')
+        help=f'(int, default={json_args["parser_defaults"]["dataloader_batch_size"]}) Batch size used by the dataloaders for training, validation, and testing.')
 
-    parser.add_argument('--dataloader_pin_memory', action='store_false',
-        help='(bool, default=True) Disable pinned memory in dataloaders (enabled by default).')
+    parser.add_argument('--dataloader_pin_memory', action='store_true',
+        help=f'(bool, default=False) Toggle pinned memory in dataloaders (Disabled by default).')
 
     parser.add_argument('--dataloader_num_workers', type=int, default=json_args["parser_defaults"]["dataloader_num_workers"],
-        help='(int, default=0) Number of subprocesses to use for data loading.')
+        help=f'(int, default={json_args["parser_defaults"]["dataloader_num_workers"]}) Number of subprocesses to use for data loading.')
 
     parser.add_argument('--log_iterations', type=int, default=json_args["parser_defaults"]["log_iterations"],
-        help='(int, default=32) Frequency (in iterations) to log training progress.')
+        help=f'(int, default={json_args["parser_defaults"]["log_iterations"]}) Frequency (in iterations) to log training progress.')
 
     parser.add_argument('--eval_iterations', type=int, default=json_args["parser_defaults"]["eval_iterations"],
-        help='(int, default=32) Frequency (in iterations) to evaluate the model.')
+        help=f'(int, default={json_args["parser_defaults"]["eval_iterations"]}) Frequency (in iterations) to evaluate the model.')
 
     parser.add_argument('--use_cuda', action='store_true',
-        help='(bool, default=False) Enable CUDA for training if available.')
+        help=f'(bool, default=False) Enable CUDA for training if available.')
 
     parser.add_argument('--device', type=str, default=json_args["parser_defaults"]["device"],
-        help='(str, default="cpu") Device to use for training (e.g., "cpu", "cuda:0"). Overrides --use_cuda.')
+        help=f'(str, default={json_args["parser_defaults"]["device"]}) Device to use for training (e.g., "cpu", "cuda:0"). Overrides --use_cuda.')
 
     parser.add_argument('--save_model', action='store_true',
-        help='(bool, default=False) Save the trained model after training.')
+        help=f'(bool, default=False) Save the trained model after training.')
 
     parser.add_argument('--model_output_path', type=str, default=json_args["parser_defaults"]["model_output_path"],
-        help='(str, default="models/liquid_gold_model.pt") File path to save the trained model.')
+        help=f'(str, default={json_args["parser_defaults"]["model_output_path"]}) File path to save the trained model.')
 
     # Parse the arguments (DISABLED DURING IPYNB TESTING)
     parser_args = parser.parse_args()
