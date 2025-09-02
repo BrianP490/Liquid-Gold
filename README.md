@@ -83,11 +83,11 @@
 - ```python model_training.py```
     - Uses the default settings to run the script.
     
-- ```pythonmodel_training.py --epochs=32  --log_iterations=4 --eval_iterations=8 --save_model```
+- ```python model_training.py --epochs=32  --log_iterations=4 --eval_iterations=8 --save_model```
     - Explanation: Run for 32 epochs and log the Batch Loss every 4 iterations. Evaluate the Policy-under-training every 8 epochs. Lastly, save the trained model (uses the default save path.) Uses default for everything else.
     
     
-- ```pythonmodel_training.py --epochs=32  --use_cuda --save_model --model_output_path=models/first-trained-model.pt```
+- ```python model_training.py --epochs=32  --use_cuda --save_model --model_output_path=models/first-trained-model.pt```
     - Explanation: Let the system detect if your system has GPU capabilities and has cuda available for training. During the training setup, the system dynamically sets the device variable for model training. Saves the trained model using the specified location. Uses default for everything else.
 
 ---
