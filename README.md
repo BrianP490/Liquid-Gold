@@ -1,4 +1,4 @@
-# Training a Regression Deep Nerual Network to predict Closing Prices of Crude Oil
+# Training a Regression Deep Neural Network to predict Closing Prices of Crude Oil
 
 ## 💻 Setup Guide
 1. Clone the repository to a local directory
