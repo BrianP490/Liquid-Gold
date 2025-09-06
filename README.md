@@ -93,3 +93,7 @@
 ---
 
 ## For detailed config file options, see '[/configs/config.json](/configs/config.json)' and '[/configs/README.md](/configs/README.md)'.
+
+## 🤖 Closing Oil Price Agent Predictor
+  - Took a trained model and put it on a HuggingFace Space.
+  - [HuggingFace/SoggyBurritos Space Link](https://huggingface.co/spaces/SoggyBurritos/Liquid_Gold)

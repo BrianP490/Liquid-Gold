@@ -13,4 +13,5 @@ This project is a Streamlit-based Agent that uses PyTorch to load a trained mode
 
 ## Interact using the App Tab
 
-Enter in all the required fields and get the agent's prediction.
+- Enter in all the required fields and get the agent's prediction.
+- [Click Here To Try It Out](https://huggingface.co/spaces/SoggyBurritos/Liquid_Gold)
